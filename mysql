@@ -1,0 +1,7 @@
+# mysql
+CREATE DATABASE test_login;
+CREATE USER 'xss'@'localhost' IDENTIFIED BY '1234';
+USE test_login;
+CREATE TABLE test_table ( test_id VARCHAR(20) PRIMARY KEY, test_pw VARCHAR(20) NOT NULL );
+GRANT ALL PRIVILIGES ON test_login.test_table TO 'xss'@'localhost';
+INSERT INTO test_table VALUES ( [ID], [PW] );
